@@ -3,6 +3,8 @@ import Classes.Market;
 import Classes.OrdinaryClient;
 import Classes.SpecialClient;
 import Interfaces.iActorBehaviour;
+import Interfaces.iReturnOrder;
+import Classes.ReturnClient;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -19,7 +21,7 @@ public class App {
        iActorBehaviour item1 = new OrdinaryClient("Boris");
        iActorBehaviour item2 = new SpecialClient("Fedor", 1101);
        iActorBehaviour item3 = new OrdinaryClient("Dasha");
-       iActorBehaviour item4 = new ActionClient("Sergey", 40);
+       iActorBehaviour item4 = new ActionClient("Sergey", 40, "OOP Not Bad");
 
        market.acceptToMarket(item1);
        market.acceptToMarket(item2);
