@@ -28,3 +28,4 @@ public class App {
        market.update();
     }
 }
+// показываю дз
