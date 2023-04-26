@@ -1,7 +1,11 @@
 package StudentDomen;
 
-public class Student extends User implements Comparable<Student>{
+public class Student extends User implements Comparable<Student>, Ageable{
     private long studentID;
+    private int age;
+
+
+
     public Student(String firstName, String secondName, int age, long studentID) {
         super(firstName, secondName, age);
         this.studentID = studentID;
@@ -16,29 +20,44 @@ public class Student extends User implements Comparable<Student>{
         this.studentID = studentID;
     }
 
+
+    public int getAge() {
+        return age;
+    }
+
+
     @Override
     public String toString() {
-        return "Student{" +
-                "studentID=" + studentID + "\\"
-                +", firstName=" +super.getFirstName()
+        return "Student{" 
+                
+                +"firstName=" +super.getFirstName()
                 +", secondName=" +super.getSecondName()
-                +", age=" +super.getAge() +
+                +", age=" +super.getAge()+
+                ", studentID=" + studentID +
                 '}';
     }
 
 
     @Override
     public int compareTo(Student o) {
-
+        
         System.out.println(super.getFirstName()+" - "+o.getFirstName());
-        if(super.getAge()==o.getAge())
-        {
-            return 0;
-        }
-        if(super.getAge()<o.getAge())
-        {
+         if(super.getAge()==o.getAge())
+         {
+            if(this.studentID==o.studentID)
+            {
+                return 0;
+            }
+            if(this.studentID<o.studentID)
+            {
+                return -1;
+            }
+            return 1;
+         } 
+         if(super.getAge()<o.getAge())
+         {
             return -1;
-        }
-        return 1;
+         }   
+         return 1;
     }
 }

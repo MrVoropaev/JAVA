@@ -20,7 +20,7 @@ public class StudentGroupIterator implements Iterator<Student> {
         {
             return null;
         }
-       // counter++;
+        //counter++;
         return students.get(counter++);        
     }
     
